@@ -1,42 +1,35 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <!--#include <iostream>
-#include <string>
-#include <vector>
-using namespace std;
-int main(){
-    int i , j , k , n;
-    vector<vector<char>> a(26, vector<char>(26));
-    k = 0; 
-    n = 26;
-    for (i=0; i < n ; i++){
-        k=i;
-        for (j=0; j < n ; j++){
-            a[i][j] = 'A' + k;
-            k++;
-            if (k == 26)
-                k=0;
-        }
-    }
-    cout<<"enter the massage : ";
-    string s;
-    cin>>s;
-    cout<<"enter the key : ";
-    string key;
-    cin>>key;
-    k = 0;
-    int mod=key.size();
-    for (i = key.size(); i<s.size();i++){
-        key += key[k%mod];
-        k++;
-    }
-    string encrypt;
-    for (i=0 ;i<s.size();i++){
-        encrypt += a[s[i]- 'A'][key[i]-'A'];
-    }
-    cout<<encrypt;
-    return 0;
+    <!--
+class Stack:
+ def __init__(self):
+ self.stack = []
+ def is_empty(self):
+ return len(self.stack) == 0
+ def push(self, item):
+ self.stack.append(item)
+ def pop(self):
+ if self.is_empty():
+ return "Stack is empty!"
+ return self.stack.pop()
+ def peek(self):
+ if self.is_empty():
+ return "Stack is empty!"
+ return self.stack[-1]
+ def size(self):
+ return len(self.stack)
+ def display(self):
+ return self.stack
+stack = Stack()
+stack.push(10)
+stack.push(20)
+stack.push(30)
+print(f"Top element: {stack.peek()}") 
+print(f"Stack size: {stack.size()}") 
+print(f"Stack contents: {stack.display()}")
+print(f"Popped element: {stack.pop()}") 
+print(f"Stack after pop: {stack.display()}")
 }-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,13 +41,102 @@ int main(){
 </head>
 <body>
 
-<!-- TOAST CONTAINER -->
+<!-- class Queue:
+ def __init__(self):
+ self.queue = []
+
+ def enqueue(self, element):
+ self.queue.append(element)
+
+ def dequeue(self):
+ if self.isEmpty():
+ return "Queue is empty"
+ return self.queue.pop(0)
+
+ def peek(self):
+ if self.isEmpty():
+ return "Queue is empty"
+ return self.queue[0]
+
+ def isEmpty(self):
+ return len(self.queue) == 0
+
+ def size(self):
+ return len(self.queue)
+myQueue = Queue()
+myQueue.enqueue('A')
+myQueue.enqueue('B')
+myQueue.enqueue('C')
+print("Queue: ", myQueue.queue )
+print("Dequeue: ", myQueue.dequeue()) 
+print("Peek: ", myQueue.peek())
+print("isEmpty: ", myQueue.isEmpty()) 
+print("Size: ", myQueue.size()) 
+    -->
 <div id="toast-container"></div>
 
-<!-- CART SIDEBAR OVERLAY -->
+<!-- class Node:
+ def __init__(self, key):
+ self.left = None
+ self.right = None
+ self.val = key
+def insert(root, key):
+ if root is None:
+ return Node(key)
+ if root.val == key:
+ return root
+ if root.val < key:
+ root.right = insert(root.right, key)
+ else:
+ root.left = insert(root.left, key)
+ return root
+def inorder(root):
+ if root:
+ inorder(root.left)
+ print(root.val, end=" ")
+ inorder(root.right)
+    r = Node(50)
+r = insert(r, 30)
+r = insert(r, 20)
+r = insert(r, 40)
+r = insert(r, 70)
+r = insert(r, 60)
+r = insert(r, 80)
+print("In-order traversal: ")
+inorder(r)
+-->
 <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
 
-<!-- CART SIDEBAR -->
+<!-- class Node:
+ def __init__(self, key):
+ self.left = None
+ self.right = None
+ self.val = key
+def insert(root, key):
+ if root is None:
+ return Node(key)
+ if root.val == key:
+ return root
+ if root.val < key:
+ root.right = insert(root.right, key)
+ else:
+ root.left = insert(root.left, key)
+ return root
+def preorder(root):
+ if root:
+ print(root.val, end=" ")
+ preorder(root.left)
+ preorder(root.right)
+r = Node(50)
+r = insert(r, 30)
+r = insert(r, 20)
+r = insert(r, 40)
+r = insert(r, 70)
+r = insert(r, 60)
+r = insert(r, 80)
+print("Pre-order traversal: ")
+preorder(r)
+ -->
 <div id="cart-sidebar" class="cart-sidebar">
     <div class="cart-header">
         <h3>سلة التسوق</h3>
@@ -70,7 +152,36 @@ int main(){
     </div>
 </div>
 
-<!-- NAVBAR -->
+<!-- class Node:
+ def __init__(self, key):
+ self.left = None
+ self.right = None
+ self.val = key
+def insert(root, key):
+ if root is None:
+ return Node(key)
+ if root.val == key:
+ return root
+ if root.val < key:
+ root.right = insert(root.right, key)
+ else:
+ root.left = insert(root.left, key)
+ return root
+def postorder(root):
+ if root:
+ postorder(root.left)
+ postorder(root.right)
+ print(root.val, end=" ")
+r = Node(50)
+r = insert(r, 30)
+r = insert(r, 20)
+r = insert(r, 40)
+r = insert(r, 70)
+r = insert(r, 60)
+r = insert(r, 80)
+print("Post-order traversal: ")
+postorder(r)
+ -->
 <nav class="navbar" id="navbar">
     <div class="nav-container">
         <div class="nav-logo" onclick="navigate('home')">
