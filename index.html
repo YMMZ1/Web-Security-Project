@@ -1,6 +1,43 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <!--#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+int main(){
+    int i , j , k , n;
+    vector<vector<char>> a(26, vector<char>(26));
+    k = 0; 
+    n = 26;
+    for (i=0; i < n ; i++){
+        k=i;
+        for (j=0; j < n ; j++){
+            a[i][j] = 'A' + k;
+            k++;
+            if (k == 26)
+                k=0;
+        }
+    }
+    cout<<"enter the massage : ";
+    string s;
+    cin>>s;
+    cout<<"enter the key : ";
+    string key;
+    cin>>key;
+    k = 0;
+    int mod=key.size();
+    for (i = key.size(); i<s.size();i++){
+        key += key[k%mod];
+        k++;
+    }
+    string encrypt;
+    for (i=0 ;i<s.size();i++){
+        encrypt += a[s[i]- 'A'][key[i]-'A'];
+    }
+    cout<<encrypt;
+    return 0;
+}-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src https: data:;">
